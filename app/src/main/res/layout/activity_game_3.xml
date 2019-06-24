@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="gameViewModel"
+            type="com.ioconnectservices.memorygame.viewmodel.GameViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image_card_00"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(0, 0)}"
+            app:imageResource='@{gameViewModel.cards["00"]}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_card_01"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(0, 1)}"
+            app:imageResource='@{gameViewModel.cards["01"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_00"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_card_02"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(0, 2)}"
+            app:imageResource='@{gameViewModel.cards["02"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_01"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_card_03"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(0, 3)}"
+            app:imageResource='@{gameViewModel.cards["03"]}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/image_card_02"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_card_10"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(1, 0)}"
+            app:imageResource='@{gameViewModel.cards["10"]}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_00" />
+
+        <ImageView
+            android:id="@+id/image_card_11"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(1, 1)}"
+            app:imageResource='@{gameViewModel.cards["11"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_10"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_01" />
+
+        <ImageView
+            android:id="@+id/image_card_12"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(1, 2)}"
+            app:imageResource='@{gameViewModel.cards["12"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_11"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_02" />
+
+        <ImageView
+            android:id="@+id/image_card_13"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(1, 3)}"
+            app:imageResource='@{gameViewModel.cards["13"]}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/image_card_12"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_03" />
+
+        <ImageView
+            android:id="@+id/image_card_20"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(2, 0)}"
+            app:imageResource='@{gameViewModel.cards["20"]}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_10" />
+
+        <ImageView
+            android:id="@+id/image_card_21"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(2, 1)}"
+            app:imageResource='@{gameViewModel.cards["21"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_20"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_11" />
+
+        <ImageView
+            android:id="@+id/image_card_22"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(2, 2)}"
+            app:imageResource='@{gameViewModel.cards["22"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_21"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_12" />
+
+        <ImageView
+            android:id="@+id/image_card_23"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(2, 3)}"
+            app:imageResource='@{gameViewModel.cards["23"]}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toEndOf="@+id/image_card_22"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_13" />
+
+        <ImageView
+            android:id="@+id/image_card_30"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(3, 0)}"
+            app:imageResource='@{gameViewModel.cards["30"]}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_20" />
+
+        <ImageView
+            android:id="@+id/image_card_31"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(3, 1)}"
+            app:imageResource='@{gameViewModel.cards["31"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_30"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_21" />
+
+        <ImageView
+            android:id="@+id/image_card_32"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(3, 2)}"
+            app:imageResource='@{gameViewModel.cards["32"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_31"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_22" />
+
+        <ImageView
+            android:id="@+id/image_card_33"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(3, 3)}"
+            app:imageResource='@{gameViewModel.cards["33"]}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toEndOf="@+id/image_card_32"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_23" />
+
+        <ImageView
+            android:id="@+id/image_card_40"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(4, 0)}"
+            app:imageResource='@{gameViewModel.cards["40"]}'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_30" />
+
+        <ImageView
+            android:id="@+id/image_card_41"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(4, 1)}"
+            app:imageResource='@{gameViewModel.cards["41"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_40"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_31" />
+
+        <ImageView
+            android:id="@+id/image_card_42"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(4, 2)}"
+            app:imageResource='@{gameViewModel.cards["42"]}'
+            app:layout_constraintStart_toEndOf="@+id/image_card_41"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_32" />
+
+        <ImageView
+            android:id="@+id/image_card_43"
+            android:layout_width="76dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:onClick="@{() -> gameViewModel.onClickedCardAt(4, 3)}"
+            app:imageResource='@{gameViewModel.cards["43"]}'
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toEndOf="@+id/image_card_42"
+            app:layout_constraintTop_toBottomOf="@+id/image_card_33" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
