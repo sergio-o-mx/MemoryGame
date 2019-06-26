@@ -52,6 +52,6 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public void onGameEnded(boolean value) {
-        Toast.makeText(this, "Game Ended, restarting...", Toast.LENGTH_SHORT).show();
+        runOnUiThread(() -> Toast.makeText(GameActivity.this, getResources().getText(R.string.game_ended_text), Toast.LENGTH_SHORT).show());
     }
 }

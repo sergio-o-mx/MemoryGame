@@ -59,29 +59,33 @@ public class GameViewModel extends ViewModel {
         } else if (secondKey.equals("") && game.cards[col][row].isNotFound()) {
             secondKey = String.valueOf(col) + String.valueOf(row);
             cards.put(stringFromNumbers(col, row), getCardResource(game.cards[col][row].getValue()));
-            if (game.doCardsMatch(firstKey, secondKey)) {
-                game.cards[numbersFromString(firstKey)[0]][numbersFromString(firstKey)[1]].setFound(true);
-                game.cards[numbersFromString(secondKey)[0]][numbersFromString(secondKey)[1]].setFound(true);
-                firstKey = "";
-                secondKey = "";
-                if (game.hasGameEnded()) {
-                    new Handler().postDelayed(() -> {
-                        cards.clear();
-                        randomizeCards();
-                    }, 1500);
-                }
-            } else {
-                new Handler().postDelayed(() -> {
-                    cards.put(firstKey, CARD_BACK_RESOURCE);
-                    cards.put(secondKey, CARD_BACK_RESOURCE);
-                    firstKey = "";
-                    secondKey = "";
-                }, 1500);
-            }
+            checkIfCardsMatch();
         }
     }
 
     public MutableLiveData<Boolean> hasGameEnded() {
         return game.gameEnded;
+    }
+
+    private void checkIfCardsMatch() {
+        if (game.doCardsMatch(firstKey, secondKey)) {
+            game.cards[numbersFromString(firstKey)[0]][numbersFromString(firstKey)[1]].setFound(true);
+            game.cards[numbersFromString(secondKey)[0]][numbersFromString(secondKey)[1]].setFound(true);
+            firstKey = "";
+            secondKey = "";
+            if (game.hasGameEnded()) {
+                new Handler().postDelayed(() -> {
+                    cards.clear();
+                    randomizeCards();
+                }, 1500);
+            }
+        } else {
+            new Handler().postDelayed(() -> {
+                cards.put(firstKey, CARD_BACK_RESOURCE);
+                cards.put(secondKey, CARD_BACK_RESOURCE);
+                firstKey = "";
+                secondKey = "";
+            }, 1500);
+        }
     }
 }

@@ -2,8 +2,11 @@
     <string name="app_name">Memory Game</string>
 
     <!-- Main -->
-    <string name="select_game_legend">Select game</string>
-    <string name="game_type_1">4x3</string>
-    <string name="game_type_2">4x4</string>
-    <string name="game_type_3">4x5</string>
+    <string name="main_select_game">Select game</string>
+    <string name="main_game_type_4x3">4x3</string>
+    <string name="main_game_type_4x4">4x4</string>
+    <string name="main_game_type_4x5">4x5</string>
+
+    <!-- Game -->
+    <string name="game_ended_text">Game Ended, restarting…</string>
 </resources>

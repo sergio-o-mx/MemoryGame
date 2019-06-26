@@ -14,9 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String GAME_TYPE = "type";
 
-    private static final int GAME_TYPE_1 = 1;
-    private static final int GAME_TYPE_2 = 2;
-    private static final int GAME_TYPE_3 = 3;
+    private static final int GAME_TYPE_4x3 = 1;
+    private static final int GAME_TYPE_4x4 = 2;
+    private static final int GAME_TYPE_4x5 = 3;
 
     private MainViewModel mainViewModel;
 
@@ -30,20 +30,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setGameSelectedListener() {
-        mainViewModel.gameSelectedLiveData.observe(this, this::onBoardSizeSelected);
+        mainViewModel.gameSelectedLiveData.observe(this, this::onBoardTypeSelected);
     }
 
-    public void onBoardSizeSelected(int size) {
+    public void onBoardTypeSelected(int type) {
         Intent launchGameIntent = new Intent(MainActivity.this, GameActivity.class);
-        switch (size) {
+        switch (type) {
             case 0:
-                launchGameIntent.putExtra(GAME_TYPE, GAME_TYPE_1);
+                launchGameIntent.putExtra(GAME_TYPE, GAME_TYPE_4x3);
                 break;
             case 1:
-                launchGameIntent.putExtra(GAME_TYPE, GAME_TYPE_2);
+                launchGameIntent.putExtra(GAME_TYPE, GAME_TYPE_4x4);
                 break;
             case 2:
-                launchGameIntent.putExtra(GAME_TYPE, GAME_TYPE_3);
+                launchGameIntent.putExtra(GAME_TYPE, GAME_TYPE_4x5);
                 break;
         }
         startActivity(launchGameIntent);
